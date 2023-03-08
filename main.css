@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.clock{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 3px white solid;
+    border-radius: 50%;
+    background: #000;
+}
+.number{
+    --rotation:0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    transform: rotate(var(--rotation));
+    font-family: "roboto-regular";
+}
+.number1{--rotation:30deg;}
+.number2{--rotation:60deg;}
+.number3{--rotation:90deg;}
+.number4{--rotation:120deg;}
+.number5{--rotation:150deg;}
+.number6{--rotation:180deg;}
+.number7{--rotation:210deg;}
+.number8{--rotation:240deg;}
+.number9{--rotation:270deg;}
+.number10{--rotation:300deg;}
+.number11{--rotation:330deg;}
+
+.hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform-origin: bottom;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg));
+    border: 1px black solid;
+    z-index: 10;
+}   
+.clock::after{
+    content: '';
+    position: absolute;
+    background: #000;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    z-index: 11;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.sekund{
+    background-color: green;
+    width: 6px;
+    height: 45%;
+}
+.minut{
+    background-color: #fff;
+    width: 15px;
+    height: 40%;
+}
+.soat{
+    background-color: #fff;
+    width: 15px;
+    height: 30%;
+}
+.clock_menu{
+    display: flex;
+    background-color: #000;
+    width: 400px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.clock_menu p{
+    color: #fff;
+    font-size: 40px;
+    margin-right: 10px;
+}
+.hours{
+    border: 2px #fff solid;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding: 10px;
+    font-size: 50px;
+    color: #fff;
+    background-color: #000;
+    margin-right: 10px;
+}
+.minutes{
+    border: 2px #fff solid;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding: 10px;
+    font-size: 50px;
+    color: #fff;
+    background-color: #000;
+}
+
+
+
+@media (max-width:670px) {
+    body{
+        position: absolute;
+        left: 100px;
+        top: 200px;
+    }
+
+    
+}
